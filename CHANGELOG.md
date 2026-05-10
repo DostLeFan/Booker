@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [v0.0.4] - 2026-05-10
+## [0.0.5] - 2026-05-10
+
+### Fixed
+
+- CI workflow take in charge two generated binaries
+- Fixed this changelog again
+
+## [0.0.4] - 2026-05-10
 
 ### Changed
 
@@ -19,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed MacOS compilation
 
-## [v0.0.2] - 2026-05-10
+## [0.0.2] - 2026-05-10
 
 ### Added
 
@@ -29,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed this changelog file - I forgot a lot of things, duh
 
-## [v0.0.1] - 2026-05-10
+## [0.0.1] - 2026-05-10
 
 ### Fixed
 
@@ -37,16 +44,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix project name in CMakeLists.txt
 - Fix compilation workflow on Linux and MacOS
 
-## [v0.0.0] - 2026-05-10
+## [0.0.0] - 2026-05-10
 
 ### Added
 
 - Basic initialisation of repository
 - Basic function, converting each file of a PDF into JPG, to test GitHub CI configuration - this function will be removed
 
-[unreleased]: https://github.com/DostLeFan/Booker/compare/v0.0.4...HEAD
-[v0.0.4]: https://github.com/DostLeFan/Booker/compare/v0.0.3...v0.0.4
-[v0.0.3]: https://github.com/DostLeFan/Booker/compare/v0.0.2...v0.0.3
-[v0.0.2]: https://github.com/DostLeFan/Booker/compare/v0.0.1...v0.0.2
-[v0.0.1]: https://github.com/DostLeFan/Booker/compare/v0.0.0...v0.0.1
-[v0.0.0]: https://github.com/DostLeFan/Booker/releases/tag/v0.0.0
+[unreleased]: https://github.com/DostLeFan/Booker/compare/v0.0.5...HEAD
+[0.0.5]: https://github.com/DostLeFan/Booker/compare/v0.0.4...v0.0.5
+[0.0.4]: https://github.com/DostLeFan/Booker/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/DostLeFan/Booker/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/DostLeFan/Booker/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/DostLeFan/Booker/compare/v0.0.0...v0.0.1
+[0.0.0]: https://github.com/DostLeFan/Booker/releases/tag/v0.0.0

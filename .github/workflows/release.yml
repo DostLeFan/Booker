@@ -40,7 +40,8 @@ jobs:
       - name: Package
         run: |
           mkdir -p package
-          cp bin/release/Booker package/
+          cp bin/release/booker_cli package/
+          cp bin/release/booker package/
           cp -r locales package/
           cd package
           zip -r ../Booker-${{ github.ref_name }}-linux.zip .
@@ -71,7 +72,8 @@ jobs:
       - name: Package
         run: |
           mkdir -p package
-          cp bin/release/Booker package/
+          cp bin/release/booker_cli package/
+          cp bin/release/booker package/
           cp -r locales package/
           cd package
           zip -r ../Booker-${{ github.ref_name }}-macos-arm64.zip .
@@ -102,7 +104,8 @@ jobs:
       # - name: Package
         # run: |
           # mkdir -p package
-          # cp bin/release/Booker package/
+          # cp bin/release/booker_cli package/
+          # cp bin/release/booker package/
           # cp -r locales package/
           # cd package
           # zip -r ../Booker-${{ github.ref_name }}-macos-x86_64.zip .
@@ -134,7 +137,8 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path package
-          Copy-Item bin/release/Release/Booker.exe package/
+          Copy-Item bin/release/Release/booker_cli.exe package/
+          Copy-Item bin/release/Release/booker.exe package/
           Copy-Item -Recurse locales package/
           Compress-Archive -Path package/* -DestinationPath "Booker-${{ github.ref_name }}-windows-portable.zip"
 
@@ -164,9 +168,7 @@ jobs:
         run: |
           VERSION=${{ github.ref_name }}
           VERSION_NO_V=${VERSION#v}
-          # Extraire le bloc entre ce tag et le précédent dans CHANGELOG.md
           NOTES=$(awk "/^## \[${VERSION_NO_V}\]/{found=1; next} found && /^## \[/{exit} found{print}" CHANGELOG.md)
-          # Écrire dans un fichier pour éviter les problèmes d'échappement
           echo "$NOTES" > release_notes.md
 
       - name: Download all artifacts
