@@ -1,4 +1,4 @@
-#include "../include/Include.hpp"
+#include "../include/booker/Test.hpp"
 
 #include <iostream>
 #include <iomanip>
@@ -10,7 +10,7 @@
 #include <poppler/cpp/poppler-page-renderer.h>
 #include <poppler/cpp/poppler-image.h>
 
-bool convertPdfToJpg(std::string const& pdfPath, int dpi = 300, std::string const& outputPrefix = "page")
+bool convertPdfToJpg(std::string const& pdfPath, int dpi, std::string const& outputPrefix)
 {
 	std::unique_ptr<poppler::document> doc(poppler::document::load_from_file(pdfPath));
 	
@@ -64,23 +64,4 @@ bool convertPdfToJpg(std::string const& pdfPath, int dpi = 300, std::string cons
 	}
 	
 	return true;
-}
-
-int main(int argc, char** argv)
-{
-	if(argc != 2)
-	{
-		std::cerr << "Usage : " << argv[0] << " [PDF_FILENAME]" << std::endl;
-		
-		return -1;
-	}
-	
-	std::string pdfFileName = argv[1];
-	
-	if(convertPdfToJpg(pdfFileName))
-		std::cout << "Successfull conversion of \"" << pdfFileName << "\"' pages into JPG." << std::endl;
-	else
-		std::cerr << "An error occured while converting pages of \"" << pdfFileName << "\" into JPG." << std::endl;
-	
-	return 0;
 }

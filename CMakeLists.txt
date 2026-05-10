@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+set(CORE_NAME booker_core)
+set(CLI_NAME booker_cli)
+set(GUI_NAME booker)
+
 include(FetchContent)
 include(ExternalProject)
 
@@ -396,11 +400,6 @@ set_target_properties(poppler-cpp PROPERTIES
 
 # List sources.
 
-file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/*.cpp")
-file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_SOURCE_DIR} "include/*.hpp")
-
-add_executable(${CMAKE_PROJECT_NAME} ${HEADERS} ${SOURCES})
-
-add_dependencies(${CMAKE_PROJECT_NAME} libjpeg-turbo-ext)
-
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE poppler-cpp)
+add_subdirectory(core)
+add_subdirectory(cli)
+add_subdirectory(gui)

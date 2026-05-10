@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.0.4] - 2026-05-10
+
+### Changed
+
+- Splitted code into core, cli and gui for future development
+
 ## [v0.0.3] - 2026-05-10
 
 ### Fixed
@@ -38,7 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic initialisation of repository
 - Basic function, converting each file of a PDF into JPG, to test GitHub CI configuration - this function will be removed
 
-[unreleased]: https://github.com/DostLeFan/Booker/compare/v0.0.3...HEAD
+[unreleased]: https://github.com/DostLeFan/Booker/compare/v0.0.4...HEAD
+[v0.0.4]: https://github.com/DostLeFan/Booker/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/DostLeFan/Booker/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/DostLeFan/Booker/compare/v0.0.1...v0.0.2
 [v0.0.1]: https://github.com/DostLeFan/Booker/compare/v0.0.0...v0.0.1
