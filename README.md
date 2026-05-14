@@ -4,6 +4,14 @@ Booker is a native and extensible toolkit for ebooks and comic archives written 
 
 It focuses on conversion, processing and future lightweight library management, while keeping both CLI and GUI as first-class citizens.
 
+[![Development](https://img.shields.io/badge/development-early-orange)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Release](https://img.shields.io/github/v/release/DostLeFan/Booker?include_prereleases&label=version)](https://github.com/DostLeFan/Booker/releases)
+[![CI Status](https://github.com/DostLeFan/Booker/actions/workflows/release.yml/badge.svg)](https://github.com/DostLeFan/Booker/actions/workflows/release.yml)
+[![Language](https://img.shields.io/github/languages/top/DostLeFan/Booker?color=00599C&logo=c%2B%2B)](https://github.com/DostLeFan/Booker)
+[![CMake](https://img.shields.io/badge/build-CMake-064F8C?logo=cmake&logoColor=white)](https://cmake.org/)
+[![C++17](https://img.shields.io/badge/standard-C%2B%2B17-blue?logo=c%2B%2B)](https://isocpp.org/)
+
 # Table of Contents
 
 * [Philosophy](#philosophy)
