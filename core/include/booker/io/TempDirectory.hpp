@@ -4,6 +4,11 @@
 #include <filesystem>
 #include <string>
 
+/*!
+\class TempDirectory TempDirectory.hpp "core/include/booker/io/TempDirectory.hpp"
+\brief A basic RAII class, to create and delete a temporary directory.
+*/
+
 class TempDirectory
 {
 	public:
@@ -16,7 +21,7 @@ class TempDirectory
 		inline std::filesystem::path const& getPath() const { return m_path; }
 	
 	private:
-		std::filesystem::path m_path;
+		std::filesystem::path m_path; /*!< The path of temporary directory. */
 		
 		static std::string generateName();
 };

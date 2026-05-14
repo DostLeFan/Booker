@@ -1,8 +1,19 @@
 #ifndef DEF_RAREXCEPTION
 #define DEF_RAREXCEPTION
 
+/*!
+\file RarException.hpp
+\brief Define RarException.
+\details This file define RarException, a class herited from \ref Exception class.
+*/
+
 #include "../utils/Exception.hpp"
 
+/*!
+\class RarException RarException.hpp "core/include/booker/archive/RarException.hpp"
+\brief An Exception derived class, which indicates file, line and function name of the thrown exception.
+*/
+ 
 class RarException : public Exception
 {
 	public:
