@@ -52,8 +52,11 @@ RarReader::~RarReader()
 }
 
 
-std::vector<EntryInfo> RarReader::entries() const
+std::vector<EntryInfo> RarReader::entries()
 {
+	if(m_isCachedEntries)
+		return m_cachedEntries;
+	
 	std::vector<EntryInfo> result;
 	
 	while(ar_parse_entry(m_handle))
@@ -71,7 +74,10 @@ std::vector<EntryInfo> RarReader::entries() const
 		result.push_back(std::move(entry));
 	}
 	
-	return result;
+	m_cachedEntries = result;
+	m_isCachedEntries = true;
+	
+	return m_cachedEntries;
 }
 
 void RarReader::extractToStream(EntryInfo const& entry, std::ostream& os) const

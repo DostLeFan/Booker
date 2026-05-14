@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Document sub-module in core, to handle very basic and primitive ebook
 - Format sub-module in core, to handle very basic and primitive ebook
 - Set up Doxygen documentation
+- ImageUtils and StringUtils
+- CbzHandler and CbrHandler
 
 ### Changed
 

@@ -41,6 +41,34 @@ endif()
 
 message(STATUS "unarr downloaded.")
 
+# imageinfo
+message(STATUS "Downloading imageinfo...")
+
+FetchContent_Declare(
+	imageinfo
+	GIT_REPOSITORY https://github.com/xiaozhuai/imageinfo.git
+	GIT_TAG 0a97e63249d447107137519b2d20d52be0a598b2
+)
+
+FetchContent_MakeAvailable(imageinfo)
+
+message(STATUS "imageinfo downloaded.")
+
+# libharu
+message(STATUS "Downloading libharu...")
+
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+
+FetchContent_Declare(
+	libharu
+	GIT_REPOSITORY https://github.com/libharu/libharu.git
+	GIT_TAG v2.4.6
+)
+
+FetchContent_MakeAvailable(libharu)
+
+message(STATUS "libharu downloaded.")
+
 file(GLOB_RECURSE BOOKER_CORE_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 file(GLOB_RECURSE BOOKER_CORE_HEADERS CONFIGURE_DEPENDS "include/*.hpp")
 
@@ -49,7 +77,7 @@ add_library(booker::core ALIAS ${CORE_NAME})
 
 target_include_directories(${CORE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_features(${CORE_NAME} PUBLIC cxx_std_17)
-target_link_libraries(${CORE_NAME} PRIVATE poppler-cpp poppler ZLIB::ZLIB minizip PNG::PNG JPEG::JPEG Freetype::Freetype Iconv::Iconv RarLib::RarLib unarr)
+target_link_libraries(${CORE_NAME} PRIVATE poppler-cpp poppler ZLIB::ZLIB minizip PNG::PNG JPEG::JPEG Freetype::Freetype Iconv::Iconv RarLib::RarLib unarr imageinfo hpdf)
 
 add_dependencies(${CORE_NAME} poppler-ext libjpeg-turbo-ext)
 

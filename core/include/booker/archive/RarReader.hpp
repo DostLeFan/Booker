@@ -34,7 +34,7 @@ class RarReader
 		*/
 		~RarReader();
 		
-		std::vector<EntryInfo> entries() const;
+		std::vector<EntryInfo> entries();
 		/*!
 		\brief Extract an entry from archive into a stream.
 		\throw RarException The given entry cannot be found.
@@ -55,6 +55,8 @@ class RarReader
 		std::filesystem::path m_path;
 		ar_stream* m_stream;
 		ar_archive* m_handle;
+		std::vector<EntryInfo> m_cachedEntries;
+		bool m_isCachedEntries = false;
 		
 		std::pair<ar_stream*, ar_archive*> reopen() const;
 };
