@@ -1,5 +1,14 @@
 #include "../include/Include.hpp"
 
+namespace
+{
+	void printUnsupportedFormatError(char const* role, std::filesystem::path const& path)
+	{
+		std::cerr << "ERROR: Unsupported " << role << " format: " << path.extension().string() << '\n'
+		          << "Supported formats: " << supportedFormatList << std::endl;
+	}
+}
+
 int main(int argc, char** argv)
 {
 	CLI::App app("Booker - Convert documents between CBZ, CBR and PDF");
@@ -8,11 +17,11 @@ int main(int argc, char** argv)
 	std::filesystem::path outputPath;
 	bool verbose = false;
 	
-	app.add_option("input", inputPath, "Input file (.cbz, .cbr, .pdf)")
+	app.add_option("input", inputPath, "Input file (.cbz/.zip, .cbr/.rar, .pdf)")
 	  ->required()
 	  ->check(CLI::ExistingFile);
 	
-	app.add_option("output", outputPath, "Output file (.cbz, .cbr, .pdf)")
+	app.add_option("output", outputPath, "Output file (.cbz/.zip, .cbr/.rar, .pdf)")
 	  ->required();
 	
 	app.add_flag("-v,--verbose", verbose, "Verbose output");
@@ -30,7 +39,7 @@ int main(int argc, char** argv)
 	
 	if(!reader)
 	{
-		std::cerr << "ERROR : Unsupported input format: " << inputPath.extension().string() << std::endl;
+		printUnsupportedFormatError("input", inputPath);
 		
 		return 1;
 	}
@@ -39,7 +48,7 @@ int main(int argc, char** argv)
 	
 	if(!writer)
 	{
-		std::cerr << "ERROR : Unsupported output format: " << outputPath.extension().string() << std::endl;
+		printUnsupportedFormatError("output", outputPath);
 		
 		return 1;
 	}
