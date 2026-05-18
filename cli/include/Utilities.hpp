@@ -5,6 +5,8 @@
 #include <memory>
 #include <booker/format/IFormatHandler.hpp>
 
+inline constexpr char supportedFormatList[] = ".cbz (.zip), .cbr (.rar), .pdf";
+
 std::shared_ptr<booker::IFormatHandler> get(std::filesystem::path const& path);
 static inline std::shared_ptr<booker::IFormatHandler> getReader(std::filesystem::path const& path) { return get(path); }
 static inline std::shared_ptr<booker::IFormatHandler> getWriter(std::filesystem::path const& path) { return get(path); }
