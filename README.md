@@ -26,6 +26,9 @@ It focuses on conversion, processing and future lightweight library management, 
 	* [About build](#about-build)
 	* [Requirements](#requirements)
 	* [Cross-platform build commands](#cross-platform-build-commands)
+* [Usage](#usage)
+	* [CLI](#cli)
+	* [GUI](#gui)
 * [Roadmap](#roadmap)
 	* [Core](#core)
 	* [Conversion](#conversion)
@@ -141,6 +144,30 @@ cmake --build --preset YOUR_PRESET
 cmake --preset debug -G "Unix Makefiles"
 cmake --build --preset debug
 ```
+
+# Usage
+
+## CLI
+
+The project is currently running with a minimal command-line interface.
+
+At present, it allows you to convert between CBR, CBZ and PDF formats (CBR->CBZ, CBR->PDF, CBZ->CBR, CBZ->PDF, PDF->CBR, PDF->CBZ).
+
+Conversions may be slow in some cases, as they have not yet been optimised.
+
+But here are a few examples of how to use it:
+
+```
+booker_cli [FILE_TO_CONVERT].[cbr/cbz/pdf] [OUTPUT_FILE].[cbr/cbz/pdf] # The CLI will automatically detect formats and convert with correct algorithm
+
+# For example :
+
+booker_cli "Booker - Sample PDF.pdf" "Booker - Sample PDF.cbz" # This file, "Booker - Sample PDF.pdf", can be found in "sample data/" directory.
+```
+
+## GUI
+
+GUI isn't developed yet ; the GUI library isn't decided. But, in the future, this part will be documented.
 
 # Roadmap
 
